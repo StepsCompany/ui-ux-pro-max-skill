@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICTBIT – שותף טכנולוגי לארגונים | סייבר · ענן · MSSP · AI</title>
+<meta name="description" content="ICTBIT – שותף טכנולוגי אסטרטגי לארגונים. סייבר מנוהל (MSSP), פתרונות ענן, ובינה מלאכותית. 150+ מומחים מוסמכים, 10+ שנות ניסיון.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Trust & Authority palette (B2B Service) — recommended by ui-ux-pro-max */
+  --color-primary:        #0F172A;
+  --color-on-primary:     #FFFFFF;
+  --color-secondary:      #334155;
+  --color-on-secondary:   #FFFFFF;
+  --color-accent:         #0369A1;
+  --color-accent-hover:   #075985;
+  --color-on-accent:      #FFFFFF;
+  --color-accent-light:   #E0F2FE;
+  --color-background:     #F8FAFC;
+  --color-foreground:     #020617;
+  --color-card:           #FFFFFF;
+  --color-card-foreground:#020617;
+  --color-muted:          #E8ECF1;
+  --color-muted-foreground:#64748B;
+  --color-border:         #E2E8F0;
+  --color-border-strong:  #CBD5E1;
+  --color-destructive:    #DC2626;
+  --color-success:        #047857;
+  --color-warning:        #B45309;
+  --color-ring:           #0F172A;
+
+  --shadow-sm:  0 1px 2px 0 rgb(15 23 42 / 0.05);
+  --shadow:     0 1px 3px 0 rgb(15 23 42 / 0.08), 0 1px 2px -1px rgb(15 23 42 / 0.06);
+  --shadow-md:  0 4px 6px -1px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.05);
+  --shadow-lg:  0 10px 15px -3px rgb(15 23 42 / 0.08), 0 4px 6px -4px rgb(15 23 42 / 0.05);
+  --shadow-xl:  0 20px 25px -5px rgb(15 23 42 / 0.10), 0 8px 10px -6px rgb(15 23 42 / 0.05);
+
+  --radius-sm:   6px;
+  --radius:      10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+
+  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  direction: rtl;
+  text-align: right;
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+a { color: var(--color-accent); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--color-accent-hover); }
+a:focus-visible { outline: 2px solid var(--color-ring); outline-offset: 2px; border-radius: 4px; }
+
+button { font-family: inherit; cursor: pointer; }
+
+::selection { background: var(--color-accent); color: var(--color-on-accent); }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-muted); }
+::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-secondary); }
+
+/* ── Container ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: 'Lexend', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:focus-visible { outline: 2px solid var(--color-ring); outline-offset: 2px; }
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-on-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-dark {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+.btn-dark:hover {
+  background: #1E293B;
+  color: var(--color-on-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-border-strong);
+}
+.btn-outline:hover {
+  background: var(--color-card);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-secondary);
+}
+.btn-ghost:hover {
+  background: var(--color-muted);
+  color: var(--color-primary);
+}
+
+.btn-lg { padding: 16px 32px; font-size: 16px; }
+
+/* ── Icon helper ── */
+.icon { width: 20px; height: 20px; flex-shrink: 0; }
+.icon-lg { width: 28px; height: 28px; }
+.icon-xl { width: 40px; height: 40px; }
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow var(--transition);
+}
+.nav.scrolled { box-shadow: var(--shadow); }
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav-logo {
+  font-family: 'Lexend', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-logo-mark {
+  width: 32px; height: 32px;
+  background: var(--color-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--color-secondary);
+  font-family: 'Lexend', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+.nav-links a:hover {
+  color: var(--color-primary);
+  background: var(--color-muted);
+}
+
+.nav-actions { display: flex; gap: 8px; align-items: center; }
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  position: relative;
+  padding: 80px 0 96px;
+  background: var(--color-background);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+  box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.2);
+}
+
+.hero h1 {
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+.hero h1 .accent {
+  color: var(--color-accent);
+}
+
+.hero-sub {
+  font-size: 19px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin-bottom: 36px;
+  max-width: 580px;
+}
+
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.hero-trust {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
+}
+.hero-trust-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  margin-bottom: 16px;
+}
+.hero-trust-badges {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+.trust-badge svg { color: var(--color-accent); }
+
+/* Hero card visual */
+.hero-card {
+  position: relative;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-xl);
+}
+
+.hero-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 20px;
+}
+.hero-card-title {
+  font-family: 'Lexend', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.hero-card-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(4, 120, 87, 0.08);
+  color: var(--color-success);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.status-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.8); }
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.metric-row:last-child { border-bottom: none; }
+.metric-label {
+  font-size: 14px;
+  color: var(--color-secondary);
+}
+.metric-value {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.metric-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.metric-bar-track {
+  width: 80px; height: 6px;
+  background: var(--color-muted);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.metric-bar-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 3px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.metric-bar-fill.success { background: var(--color-success); }
+
+/* ═══════════════════════════════════════
+   PROOF BAR (Trust signals strip)
+═══════════════════════════════════════ */
+.proof-bar {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 48px 0;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.proof-item {
+  text-align: center;
+  padding: 0 16px;
+}
+
+.proof-value {
+  font-family: 'Lexend', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+  color: var(--color-on-primary);
+}
+.proof-value .accent { color: #38BDF8; }
+
+.proof-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════
+   SECTION
+═══════════════════════════════════════ */
+section { position: relative; }
+
+.sec-pad { padding: 96px 0; }
+.sec-pad-sm { padding: 64px 0; }
+
+.sec-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.sec-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.sec-header h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.sec-header p {
+  font-size: 18px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════
+   CHALLENGES (Pain section)
+═══════════════════════════════════════ */
+.challenges {
+  background: var(--color-card);
+}
+
+.challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.challenge-card {
+  padding: 36px 32px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+  position: relative;
+}
+.challenge-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.challenge-icon {
+  width: 56px; height: 56px;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.challenge-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+
+.challenge-card p {
+  font-size: 15px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.challenge-stat {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--color-muted);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-family: 'Lexend', sans-serif;
+}
+
+/* ═══════════════════════════════════════
+   APPROACH
+═══════════════════════════════════════ */
+.approach { background: var(--color-background); }
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.approach-content h2 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 8px;
+}
+.approach-content .lead {
+  font-size: 17px;
+  color: var(--color-secondary);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.integrity-callout {
+  position: relative;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 28px;
+}
+.integrity-callout::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 4px; height: 100%;
+  background: var(--color-accent);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+.integrity-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.integrity-callout-icon {
+  width: 32px; height: 32px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38BDF8;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.integrity-callout h4 {
+  color: var(--color-on-primary);
+  font-size: 17px;
+  font-weight: 600;
+}
+.integrity-callout p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+.integrity-callout strong { color: #38BDF8; font-weight: 600; }
+
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+.checklist-icon {
+  width: 22px; height: 22px;
+  flex-shrink: 0;
+  color: var(--color-accent);
+  margin-top: 1px;
+}
+
+/* Process timeline */
+.process-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow);
+}
+.process-title {
+  font-family: 'Lexend', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-muted-foreground);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.process-step {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+.process-step:last-child { border-bottom: none; padding-bottom: 0; }
+
+.step-num {
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.step-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--color-primary);
+}
+.step-info p {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════ */
+.services { background: var(--color-card); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  padding: 32px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.service-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 100%; height: 3px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  width: 48px; height: 48px;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.service-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+
+.service-card h3 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--color-secondary);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.service-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+.service-features li {
+  font-size: 13px;
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.service-features svg {
+  color: var(--color-accent);
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   INDUSTRIES (Path Selection - Enterprise Gateway)
+═══════════════════════════════════════ */
+.industries { background: var(--color-background); }
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.industry-card {
+  padding: 28px 24px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.industry-card:hover {
+  border-color: var(--color-accent);
+  background: var(--color-card);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  color: inherit;
+}
+
+.industry-icon {
+  width: 56px; height: 56px;
+  margin: 0 auto 16px;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.industry-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-primary);
+}
+.industry-card p {
+  font-size: 13px;
+  color: var(--color-muted-foreground);
+}
+
+/* ═══════════════════════════════════════
+   WHY US
+═══════════════════════════════════════ */
+.why { background: var(--color-card); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.why-card {
+  padding: 32px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+}
+.why-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow);
+}
+
+.why-card.featured {
+  grid-column: span 2;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.why-card.featured::after {
+  content: '';
+  position: absolute;
+  top: -100px; left: -100px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.why-icon {
+  width: 44px; height: 44px;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.why-card.featured .why-icon {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38BDF8;
+}
+
+.why-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.why-card.featured h3 { color: var(--color-on-primary); }
+
+.why-card p {
+  font-size: 15px;
+  color: var(--color-secondary);
+  line-height: 1.7;
+}
+.why-card.featured p { color: rgba(255, 255, 255, 0.85); }
+.why-card.featured strong { color: #38BDF8; font-weight: 600; }
+
+/* ═══════════════════════════════════════
+   CLIENTS (logos strip)
+═══════════════════════════════════════ */
+.clients { background: var(--color-background); padding: 64px 0; }
+
+.clients-label {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  margin-bottom: 32px;
+}
+
+.clients-grid {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.client-chip {
+  padding: 14px 24px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: 'Lexend', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-secondary);
+  transition: all var(--transition);
+}
+.client-chip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-primary);
+  background: var(--color-card);
+  box-shadow: var(--shadow);
+}
+
+/* ═══════════════════════════════════════
+   CTA
+═══════════════════════════════════════ */
+.cta { background: var(--color-background); padding: 96px 0; }
+
+.cta-card {
+  position: relative;
+  background: var(--color-primary);
+  border-radius: var(--radius-xl);
+  padding: 72px 56px;
+  text-align: center;
+  color: var(--color-on-primary);
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-xl);
+}
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -150px; left: 50%;
+  transform: translateX(-50%);
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(3, 105, 161, 0.4), transparent 70%);
+  pointer-events: none;
+}
+
+.cta-card .sec-tag {
+  position: relative;
+  color: #38BDF8;
+}
+
+.cta-card h2 {
+  position: relative;
+  color: var(--color-on-primary);
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 16px;
+}
+
+.cta-card > p {
+  position: relative;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.cta-card .btn-outline {
+  background: transparent;
+  color: var(--color-on-primary);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.cta-card .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--color-on-primary);
+}
+
+.cta-contacts {
+  position: relative;
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.contact-item svg {
+  color: #38BDF8;
+  width: 16px; height: 16px;
+}
+.contact-item a {
+  color: var(--color-on-primary);
+  font-weight: 500;
+}
+.contact-item a:hover { color: #38BDF8; }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background: var(--color-card);
+  border-top: 1px solid var(--color-border);
+  padding: 40px 0;
+  text-align: center;
+}
+.foot-logo {
+  font-family: 'Lexend', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+footer p {
+  font-size: 13px;
+  color: var(--color-muted-foreground);
+  margin-bottom: 4px;
+}
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════ */
+.fi {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.fi.vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .approach-grid { grid-template-columns: 1fr; gap: 40px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
+  .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; }
+  .nav-links { display: none; }
+  .sec-pad { padding: 64px 0; }
+  .hero { padding: 56px 0 64px; }
+  .challenges-grid, .services-grid, .why-grid { grid-template-columns: 1fr; }
+  .why-card.featured { grid-column: span 1; }
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
+  .proof-grid { grid-template-columns: repeat(2, 1fr); }
+  .proof-value { font-size: 36px; }
+  .cta-card { padding: 48px 24px; }
+  .integrity-callout { padding: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-mark">IB</span>
+      <span>ICTBIT</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#challenges">האתגר</a></li>
+        <li><a href="#approach">הגישה</a></li>
+        <li><a href="#services">שירותים</a></li>
+        <li><a href="#industries">תעשיות</a></li>
+        <li><a href="#why">למה אנחנו</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://www.ictbit.com" target="_blank" rel="noopener" class="btn btn-ghost">לאתר הראשי</a>
+      <a href="#cta" class="btn btn-dark">צרו קשר</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="fi">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          <span>שותף טכנולוגי אסטרטגי מאז 2014</span>
+        </div>
+        <h1>
+          הטכנולוגיה הנכונה,<br>
+          <span class="accent">בדיוק כשצריך אותה</span>
+        </h1>
+        <p class="hero-sub">
+          ICTBIT מספקת לארגונים פתרונות סייבר, ענן, MSSP ו-AI – עם צוות של 150+ מומחים מוסמכים
+          ועיקרון מנחה אחד: יושרה מקצועית. אנחנו מציעים לכם רק את מה שאתם באמת צריכים.
+        </p>
+        <div class="hero-cta">
+          <a href="#cta" class="btn btn-primary btn-lg">
+            תיאום פגישת היכרות
+            <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+          </a>
+          <a href="#services" class="btn btn-outline btn-lg">
+            צפו בשירותים
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="hero-trust-label">הסמכות ושותפויות מובילות</div>
+          <div class="hero-trust-badges">
+            <div class="trust-badge">
+              <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span>ISO 27001</span>
+            </div>
+            <div class="trust-badge">
+              <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span>Microsoft Partner</span>
+            </div>
+            <div class="trust-badge">
+              <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span>Cisco · VMware · AWS</span>
+            </div>
+            <div class="trust-badge">
+              <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>SOC 24/7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fi">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-title">📊 ביצועים – ממוצע לקוחות ICTBIT</div>
+            <div class="hero-card-status">
+              <span class="status-dot"></span>
+              <span>LIVE</span>
+            </div>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">חיסכון עלויות ענן (FinOps)</span>
+            <div class="metric-bar">
+              <div class="metric-bar-track"><div class="metric-bar-fill success" style="width:40%"></div></div>
+              <span class="metric-value">40%</span>
+            </div>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">זמן תגובה לאירוע סייבר</span>
+            <span class="metric-value">&lt; 15 דק'</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">זמינות שירות (SLA)</span>
+            <div class="metric-bar">
+              <div class="metric-bar-track"><div class="metric-bar-fill success" style="width:99%"></div></div>
+              <span class="metric-value">99.9%</span>
+            </div>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">שביעות רצון לקוחות</span>
+            <div class="metric-bar">
+              <div class="metric-bar-track"><div class="metric-bar-fill success" style="width:98%"></div></div>
+              <span class="metric-value">98%</span>
+            </div>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">פרויקטים שהושלמו בזמן</span>
+            <div class="metric-bar">
+              <div class="metric-bar-track"><div class="metric-bar-fill success" style="width:96%"></div></div>
+              <span class="metric-value">96%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROOF BAR ══ -->
+<section class="proof-bar">
+  <div class="container">
+    <div class="proof-grid">
+      <div class="proof-item fi">
+        <div class="proof-value"><span class="counter" data-t="10">0</span><span class="accent">+</span></div>
+        <div class="proof-label">שנות ניסיון</div>
+      </div>
+      <div class="proof-item fi">
+        <div class="proof-value"><span class="counter" data-t="150">0</span><span class="accent">+</span></div>
+        <div class="proof-label">מומחים מוסמכים</div>
+      </div>
+      <div class="proof-item fi">
+        <div class="proof-value"><span class="counter" data-t="300">0</span><span class="accent">+</span></div>
+        <div class="proof-label">לקוחות פעילים</div>
+      </div>
+      <div class="proof-item fi">
+        <div class="proof-value">24<span class="accent">/</span>7</div>
+        <div class="proof-label">ניטור ותמיכה</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CHALLENGES ══ -->
+<section class="challenges sec-pad" id="challenges">
+  <div class="container">
+    <div class="sec-header fi">
+      <div class="sec-tag">האתגר שלכם</div>
+      <h2>שלושה כאבים שכל מנכ"ל מכיר</h2>
+      <p>בעולם שבו האיומים הדיגיטליים מתחדשים כל יום, הפערים הטכנולוגיים עולים ביוקר</p>
+    </div>
+
+    <div class="challenges-grid">
+      <article class="challenge-card fi">
+        <div class="challenge-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3>מתקפות סייבר שמתגברות</h3>
+        <p>63% מהחברות חוו אירוע סייבר ב-2024. עלות ממוצעת של פרצת נתונים: 4.5 מיליון דולר. האם הארגון שלכם מוגן באמת?</p>
+        <span class="challenge-stat">76% מהאיומים לא מזוהים בלי ניטור</span>
+      </article>
+
+      <article class="challenge-card fi">
+        <div class="challenge-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+        </div>
+        <h3>עלויות ענן שיוצאות משליטה</h3>
+        <p>70% מהארגונים מבזבזים יותר ממה שתכננו על שירותי ענן. FinOps נכון יכול לחסוך 30-40% מההוצאות השוטפות.</p>
+        <span class="challenge-stat">בזבוז ממוצע: $240K לארגון בינוני בשנה</span>
+      </article>
+
+      <article class="challenge-card fi">
+        <div class="challenge-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3>רגולציה שלא נעצרת</h3>
+        <p>GDPR, ISO 27001, דרישות בנק ישראל, PCI-DSS – הדרישות גדלות בכל שנה, ורוב הארגונים לא עומדים בקצב.</p>
+        <span class="challenge-stat">קנסות GDPR ממוצעים: €1.2M</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APPROACH ══ -->
+<section class="approach sec-pad" id="approach">
+  <div class="container">
+    <div class="approach-grid">
+
+      <div class="fi">
+        <div class="sec-tag">הגישה שלנו</div>
+        <h2>שותפות אמיתית,<br>לא עסקה חד-פעמית</h2>
+        <p class="lead">
+          אנחנו לא מגיעים עם פתרון מוכן. אנחנו מתחילים מהאתגר שלכם, מבינים לעומק,
+          ורק אז בונים פתרון שמתאים בדיוק לצרכים – ולא לאינטרס של הספק.
+        </p>
+
+        <div class="integrity-callout">
+          <div class="integrity-callout-header">
+            <div class="integrity-callout-icon">
+              <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h4>יושרה מקצועית – העיקרון שמנחה כל החלטה</h4>
+          </div>
+          <p>
+            אנחנו לעולם לא נמכור לכם טכנולוגיה שאתם לא צריכים. אם קיים פתרון פשוט יותר שיחסוך לכם כסף – נציג אותו.
+            <strong>האובייקטיביות הזו היא הסיבה שלקוחות נשארים איתנו שנים, ולא רק ממשיכים לשלם.</strong>
+          </p>
+        </div>
+
+        <ul class="checklist">
+          <li>
+            <svg class="checklist-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>אבחון מקיף לפני כל המלצה – מבינים לפני שמייעצים</span>
+          </li>
+          <li>
+            <svg class="checklist-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>פתרונות מותאמים אישית, לא "מדף" ממוחזר</span>
+          </li>
+          <li>
+            <svg class="checklist-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>ליווי End-to-End – מהאפיון ועד האופרציה</span>
+          </li>
+          <li>
+            <svg class="checklist-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>שקיפות מלאה בכל שלב – תמיד תדעו מה קורה ולמה</span>
+          </li>
+          <li>
+            <svg class="checklist-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>SLA מחייב, לוחות זמנים שנשמרים, ללא תירוצים</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="fi">
+        <div class="process-card">
+          <div class="process-title">כך נראית עבודה איתנו</div>
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div class="step-info">
+              <h4>אבחון ומיפוי ראשוני</h4>
+              <p>מבינים את הארגון: צרכים, סיכונים, פערים. ללא עלות, ללא מחויבות.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div class="step-info">
+              <h4>בניית הפתרון המותאם</h4>
+              <p>מתכננים פתרון שמותאם לכם – לא לספק המועדף עלינו.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div class="step-info">
+              <h4>יישום מלא ע"י מומחים</h4>
+              <p>צוות מוסמך מיישם, מתעד, ומעביר ידע – End-to-End.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div class="step-info">
+              <h4>ניטור ושיפור מתמיד</h4>
+              <p>לא נעלמים אחרי ה-Go Live. ממשיכים לשפר, למדוד, ולהתאים.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="services sec-pad" id="services">
+  <div class="container">
+    <div class="sec-header fi">
+      <div class="sec-tag">השירותים שלנו</div>
+      <h2>פתרון לכל אתגר טכנולוגי</h2>
+      <p>שש משפחות שירותים משולבות שמאפשרות לכם לקנות פחות, ולקבל הרבה יותר</p>
+    </div>
+
+    <div class="services-grid">
+
+      <article class="service-card fi">
+        <div class="service-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <span class="service-tag">Cybersecurity · MSSP</span>
+        <h3>אבטחת סייבר מנוהלת</h3>
+        <p>הגנה מלאה 24/7, SOC כשירות, וצוות תגובה מנוסה שיודע להתמודד עם איומים מתקדמים.</p>
+        <ul class="service-features">
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>SOC-as-a-Service (MSSP)</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>בדיקות חדירה ו-Red Team</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>ניהול אירועים ותגובה</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>הדרכת מודעות סייבר</li>
+        </ul>
+      </article>
+
+      <article class="service-card fi">
+        <div class="service-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+        </div>
+        <span class="service-tag">Cloud · FinOps</span>
+        <h3>פתרונות ענן חכמים</h3>
+        <p>מיגרציה, אופטימיזציה וחיסכון. הוצאת המקסימום מתשתית הענן שלכם תוך הפחתת עלויות.</p>
+        <ul class="service-features">
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>מיגרציה לענן ציבורי</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>אופטימיזציית FinOps</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>DevOps ו-CI/CD</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Hybrid Cloud Architecture</li>
+        </ul>
+      </article>
+
+      <article class="service-card fi">
+        <div class="service-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12H3l9-9 9 9h-2M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7M9 21V12h6v9"/></svg>
+        </div>
+        <span class="service-tag">Private Cloud · Compliance</span>
+        <h3>ענן פרטי מאובטח</h3>
+        <p>שליטה מלאה על הנתונים והתשתית, עם כל יתרונות הענן ועמידה מלאה ברגולציות.</p>
+        <ul class="service-features">
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>תשתית VMware ו-HCI</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>עמידה ב-GDPR, ISO 27001</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>גיבוי ו-Disaster Recovery</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>ניהול שוטף ותמיכה</li>
+        </ul>
+      </article>
+
+      <article class="service-card fi">
+        <div class="service-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <span class="service-tag">AI · Automation</span>
+        <h3>AI מעשי לארגון</h3>
+        <p>לא buzz-words – AI שעובד ומייצר ROI מדיד. שילוב יכולות בתהליכים הקיימים שלכם.</p>
+        <ul class="service-features">
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>AI בסייבר – זיהוי אנומליות</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>אוטומציה של תהליכים</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Generative AI לפרודוקטיביות</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>ניתוח נתונים חכם</li>
+        </ul>
+      </article>
+
+      <article class="service-card fi">
+        <div class="service-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <span class="service-tag">Professional Services</span>
+        <h3>שירותים מקצועיים</h3>
+        <p>תכנון אסטרטגי, ייעוץ טכנולוגי, וניהול פרויקטים מורכבים – עם צוות שהיה שם כבר.</p>
+        <ul class="service-features">
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>אדריכלות IT ואפיון</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>ניהול פרויקטים מורכבים</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>הטמעת מערכות ERP/CRM</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Helpdesk ותמיכה שוטפת</li>
+        </ul>
+      </article>
+
+      <article class="service-card fi">
+        <div class="service-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <span class="service-tag">Networking</span>
+        <h3>תשתיות רשת מתקדמות</h3>
+        <p>תשתית רשת מהירה, אמינה ומאובטחת – שמתמודדת עם אתגרי היום ומוכנה לעתיד.</p>
+        <ul class="service-features">
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>SD-WAN ו-Zero Trust Network</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Wi-Fi 6 ותשתיות אלחוטיות</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Network Security Monitoring</li>
+          <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>תכנון ויישום מ-A ל-Z</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ INDUSTRIES (Path Selection) ══ -->
+<section class="industries sec-pad" id="industries">
+  <div class="container">
+    <div class="sec-header fi">
+      <div class="sec-tag">Path Selection</div>
+      <h2>פתרונות מותאמים לתעשייה שלכם</h2>
+      <p>בחרו את התעשייה שלכם – נציג כיצד אנחנו מתמודדים עם האתגרים הספציפיים</p>
+    </div>
+
+    <div class="industries-grid">
+      <a href="#cta" class="industry-card fi">
+        <div class="industry-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M3 7v14M3 7l9-4 9 4M5 21V11h14v10M9 21v-4a3 3 0 116 0v4"/></svg>
+        </div>
+        <h4>פיננסים ובנקאות</h4>
+        <p>עמידה ברגולציה, אבטחת נתונים ו-Zero Trust</p>
+      </a>
+
+      <a href="#cta" class="industry-card fi">
+        <div class="industry-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h4>בריאות ורפואה</h4>
+        <p>הגנה על נתוני מטופלים והמשכיות עסקית</p>
+      </a>
+
+      <a href="#cta" class="industry-card fi">
+        <div class="industry-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h4>היי-טק וסטארט-אפ</h4>
+        <p>סקיילביליות ענן, DevOps ו-AI</p>
+      </a>
+
+      <a href="#cta" class="industry-card fi">
+        <div class="industry-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        </div>
+        <h4>מגזר ממשלתי</h4>
+        <p>תשתיות קריטיות ועמידה בתקנים</p>
+      </a>
+
+      <a href="#cta" class="industry-card fi">
+        <div class="industry-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        </div>
+        <h4>תעשייה ויצור</h4>
+        <p>OT/IT Convergence ו-Industry 4.0</p>
+      </a>
+
+      <a href="#cta" class="industry-card fi">
+        <div class="industry-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        </div>
+        <h4>קמעונאות ומסחר</h4>
+        <p>אבטחת תשלומים ו-PCI-DSS Compliance</p>
+      </a>
+
+      <a href="#cta" class="industry-card fi">
+        <div class="industry-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        </div>
+        <h4>השכלה ואקדמיה</h4>
+        <p>תשתיות hybrid ולמידה דיגיטלית</p>
+      </a>
+
+      <a href="#cta" class="industry-card fi">
+        <div class="industry-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h4>תעשייה רחבה</h4>
+        <p>פתרון מותאם לכל ארגון מעל 100 עובדים</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY ══ -->
+<section class="why sec-pad" id="why">
+  <div class="container">
+    <div class="sec-header fi">
+      <div class="sec-tag">למה ICTBIT</div>
+      <h2>מה מבדל אותנו מכל ספק אחר</h2>
+      <p>הסיבות שלקוחות בוחרים בנו – ובעיקר נשארים איתנו לאורך שנים</p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card featured fi">
+        <div class="why-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3>יושרה מקצועית – הבסיס לכל</h3>
+        <p>
+          בשוק שבו ספקים מנסים למכור כמה שיותר, אנחנו עושים את ההיפך.
+          אם הצרכים שלכם לא מצדיקים פתרון מסוים – נאמר לכם.
+          אם קיים כלי פשוט יותר שיחסוך לכם כסף – נציג אותו.
+          <strong>האובייקטיביות הזו היא הסיבה שלקוחות מפנים אלינו חברים – לא רק שהם ממשיכים לעבוד איתנו.</strong>
+          אנחנו מרוויחים כשאתם מרוויחים.
+        </p>
+      </div>
+
+      <div class="why-card fi">
+        <div class="why-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+        </div>
+        <h3>150+ מומחים מוסמכים</h3>
+        <p>כל מומחה בצוות שלנו מוסמך בתחומו – Microsoft, Cisco, AWS, VMware ועוד. <strong>לא מביאים מתחילים לפרויקטים שלכם.</strong></p>
+      </div>
+
+      <div class="why-card fi">
+        <div class="why-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        </div>
+        <h3>End-to-End אמיתי</h3>
+        <p>מהאפיון ועד התפעול השוטף – אנחנו כאן. <strong>לא יועץ שנעלם אחרי הפרזנטציה,</strong> ולא קבלן שמסיים ויוצא לפרויקט הבא.</p>
+      </div>
+
+      <div class="why-card fi">
+        <div class="why-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3>מהירות תגובה וזמינות</h3>
+        <p>SOC 24/7, Helpdesk זמין, SLA מוגדר ומחייב. <strong>כשיש בעיה – אנחנו הראשונים שיודעים עליה,</strong> לפעמים לפניכם.</p>
+      </div>
+
+      <div class="why-card fi">
+        <div class="why-icon">
+          <svg class="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3>פתרון מותאם, לא "מדף"</h3>
+        <p>כל לקוח מקבל פתרון שבנוי במיוחד עבורו. <strong>אין שני ארגונים זהים,</strong> ולכן אין שני פתרונות זהים אצלנו.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLIENTS LOGOS ══ -->
+<section class="clients">
+  <div class="container">
+    <div class="clients-label">ארגונים שסומכים עלינו</div>
+    <div class="clients-grid">
+      <div class="client-chip">נתיבי ישראל</div>
+      <div class="client-chip">מוסדות פיננסיים</div>
+      <div class="client-chip">חברות היי-טק מובילות</div>
+      <div class="client-chip">מגזר ממשלתי</div>
+      <div class="client-chip">בריאות ורפואה</div>
+      <div class="client-chip">תעשייה ויצור</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta" id="cta">
+  <div class="container">
+    <div class="cta-card fi">
+      <div class="sec-tag">הצעד הבא</div>
+      <h2>מוכנים לשוחח על האתגרים שלכם?</h2>
+      <p>בואו נקיים שיחת היכרות של 30 דקות. ללא עלות, ללא מחויבות – רק שיחה ישירה על מה שמשמעותי לעסק שלכם.</p>
+
+      <div class="cta-actions">
+        <a href="mailto:info@ictbit.com" class="btn btn-primary btn-lg">
+          <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          שלחו לנו מייל
+        </a>
+        <a href="https://www.ictbit.com/contact-us/" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+          טופס יצירת קשר באתר
+        </a>
+      </div>
+
+      <div class="cta-contacts">
+        <div class="contact-item">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>המלאכה 16, ראש העין</span>
+        </div>
+        <div class="contact-item">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <a href="https://www.ictbit.com" target="_blank" rel="noopener">www.ictbit.com</a>
+        </div>
+        <div class="contact-item">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <a href="mailto:info@ictbit.com">info@ictbit.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="foot-logo">ICTBIT Solutions</div>
+    <p>שותף טכנולוגי אסטרטגי · סייבר · ענן · MSSP · AI</p>
+    <p>© 2025 ICTBIT Solutions · כל הזכויות שמורות · ראש העין, ישראל</p>
+  </div>
+</footer>
+
+<script>
+/* ── Fade-in on scroll ── */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 60);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+
+/* ── Counter animation ── */
+const counterIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { runCounter(e.target); counterIO.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => counterIO.observe(el));
+
+function runCounter(el) {
+  const target = +el.dataset.t;
+  const dur = 1600;
+  const fps = 60;
+  const steps = dur / (1000 / fps);
+  const inc = target / steps;
+  let cur = 0;
+  const tick = () => {
+    cur += inc;
+    if (cur < target) { el.textContent = Math.floor(cur); requestAnimationFrame(tick); }
+    else              { el.textContent = target; }
+  };
+  requestAnimationFrame(tick);
+}
+
+/* ── Smooth anchor scroll ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href === '#') return;
+    const t = document.querySelector(href);
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+/* ── Nav shadow on scroll ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+</script>
+</body>
+</html>
